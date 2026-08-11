@@ -1,6 +1,6 @@
 services:
     web:
-        image: fatima-dev23/medicare-app:latest
+        image: fatimadev23/medicare-cicd
         port:
          - "3000:80"
         restart: unless-stopped
