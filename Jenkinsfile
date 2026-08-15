@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'fatimadev23/medicare-app'
         IMAGE_TAG  = "v1.${BUILD_NUMBER}"
-        SERVER_IP  = 'ubuntu@13.48.194.251'
+        SERVER_IP  = 'ubuntu@16.171.133.178'
     }
 
     stages {
