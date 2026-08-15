@@ -87,7 +87,7 @@ pipeline {
                     echo 'Deploying to EC2 web server via SSH...'
                     sshagent(['ec2-server-key']) {
                         sh "mkdir -p ~/.ssh"
-                        sh "ssh-keyscan -H ${SERVER_IP.split('@')[1]} >> ~/.ssh/known_hosts"
+                        sh "ssh-keyscan -H ${SERVER_IP.split('@')[1]} >> ~/.ssh/known_hosts || true"
                         sh "scp Docker-compose.yml ${SERVER_IP}:/home/ubuntu"
                         sh "ssh ${SERVER_IP} 'sudo docker compose pull && sudo docker compose up -d'"
                     }
